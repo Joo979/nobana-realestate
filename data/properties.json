@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Waterfront Villa",
+    "price": 2850000,
+    "beds": 5,
+    "baths": 4,
+    "sqft": 4200,
+    "type": "House",
+    "status": "For Sale",
+    "location": "Marina Bay, Nobana",
+    "description": "Stunning waterfront villa with panoramic ocean views, private dock, and resort-style infinity pool. This architectural masterpiece features floor-to-ceiling windows, chef's kitchen with Italian marble, and a master suite with spa-like ensuite.",
+    "features": [
+      "Infinity Pool",
+      "Private Dock",
+      "Smart Home",
+      "Wine Cellar",
+      "Home Theater",
+      "Ocean View"
+    ],
+    "agent": "Mohamed Hassan",
+    "agentTitle": "Luxury Property Specialist",
+    "agentPhone": "+201040690839",
+    "agentEmail": "mohamed.abu.baker979@gmail.com",
+    "agentImage": "",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7e5d7e?w=800&q=80",
+      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80"
+    ],
+    "lat": 25.7617,
+    "lng": -80.1918,
+    "featured": true,
+    "yearBuilt": 2022
+  },
+  {
+    "id": 2,
+    "title": "فيلا دوبلكس للإيجار",
+    "price": 40000,
+    "beds": 6,
+    "baths": 5,
+    "sqft": 6459,
+    "type": "House",
+    "status": "For Rent",
+    "location": "البوابة الأولى منطقة ( د ) شارع جاردينيا الرئيسي",
+    "description": "فيلا دوبلكس للإيجار 6 غرف 5 حمام مساحة 600 متر \nالبوابة الأولى منطقة ( د ) شارع جاردينيا الرئيسي حديقة حرف L \nمدخلين مدخل سيارة ومدخل أفراد سكني وإداري  المطلوب 40 ألف\n",
+    "features": [],
+    "images": [
+      "https://postimg.cc/gallery/Whzz0Dh"
+    ],
+    "agent": "Naglaa",
+    "agentTitle": "",
+    "agentPhone": "+201555219944",
+    "agentEmail": "",
+    "agentImage": "",
+    "lat": 0,
+    "lng": 0,
+    "featured": true,
+    "yearBuilt": 2026
+  }
+]

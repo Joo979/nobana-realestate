@@ -1,0 +1,95 @@
+{
+  "business": {
+    "name": "Nobana Real Estate",
+    "tagline": "Premium Real Estate in Giza",
+    "description": "Discover exceptional properties in the most desirable neighborhoods. From luxury estates to modern city Villas, we help you find the perfect place to call home.",
+    "address": "Hadayek El Ahram, Gate One",
+    "city": "Giza, 6th of october",
+    "phone": "+201555219944",
+    "phone2": "+201040690839",
+    "email": "mohamed.abu.baker979@gmail.com",
+    "email2": "",
+    "hours": "Sunday - Thursday : 9:00 AM - 11:00 PM\nSaturday: 10:00 AM - 11:00 PM\nFriday : By Appointment",
+    "founded": 2015,
+    "stats": {
+      "sold": 12,
+      "clients": 124
+    }
+  },
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "twitter": "#",
+    "linkedin": "#"
+  },
+  "hero": {
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Michael & Jennifer Park",
+      "role": "First-time Homebuyers",
+      "text": "Nobana Real Estate made buying our first home an absolute pleasure. Sarah went above and beyond to find us the perfect property. We couldn't be happier!",
+      "rating": 5,
+      "image": "https://i.pravatar.cc/150?img=11"
+    },
+    {
+      "name": "Robert Chen",
+      "role": "Seller, City Center",
+      "text": "Exceptional service from start to finish. James helped us sell our condo in just two weeks at well above asking price. His market knowledge is unmatched.",
+      "rating": 5,
+      "image": "https://i.pravatar.cc/150?img=12"
+    },
+    {
+      "name": "David & Lisa Thompson",
+      "role": "Relocation Buyers",
+      "text": "We were relocating from out of state and Nobana made the process seamless. Emily handled everything remotely and found us a stunning home. Truly grateful!",
+      "rating": 5,
+      "image": "https://i.pravatar.cc/150?img=9"
+    }
+  ],
+  "seo": {
+    "title": "Nobana Real Estate - Find Your Dream Home",
+    "description": "Discover exceptional properties in the most desirable neighborhoods."
+  },
+  "features": [
+    {
+      "icon": "fa-building",
+      "title": "Premium Listings",
+      "text": "Access to exclusive properties and off-market listings in the most sought-after neighborhoods."
+    },
+    {
+      "icon": "fa-user-tie",
+      "title": "Expert Agents",
+      "text": "Our experienced agents provide personalized guidance through every step of your journey."
+    },
+    {
+      "icon": "fa-handshake",
+      "title": "Seamless Process",
+      "text": "From first viewing to closing, we handle every detail so you can focus on what matters."
+    },
+    {
+      "icon": "fa-shield-alt",
+      "title": "Market Expertise",
+      "text": "Deep knowledge of Nobana's real estate market trends and neighborhood insights."
+    },
+    {
+      "icon": "fa-camera",
+      "title": "Virtual Tours",
+      "text": "Immersive 3D virtual tours and high-quality photography for every property."
+    },
+    {
+      "icon": "fa-headset",
+      "title": "24/7 Support",
+      "text": "Round-the-clock customer support to answer your questions and address your concerns."
+    }
+  ],
+  "coordinates": {
+    "lat": 29.977739720713398,
+    "lng": 31.111982587292392
+  }
+}

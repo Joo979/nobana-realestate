@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nobana Real Estate - Find Your Dream Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-home"></i></div>
+        Nobana<span>.</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta"><i class="fas fa-phone"></i> Get In Touch</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+            <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span id="heroBadgeText">Premium Real Estate in Nobana</span>
+          </div>
+          <h1>Find Your<br><span class="highlight">Dream Home</span></h1>
+          <p id="heroDescription">Discover exceptional properties in the most desirable neighborhoods. From luxury waterfront estates to modern city penthouses, we help you find the perfect place to call home.</p>
+          <div class="hero-buttons">
+            <a href="listings.html" class="btn btn-primary"><i class="fas fa-search"></i> Browse Properties</a>
+            <a href="contact.html" class="btn btn-secondary"><i class="fas fa-calendar"></i> Schedule a Tour</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <h3 id="statProperties">0</h3>
+              <p>Properties</p>
+            </div>
+            <div class="hero-stat">
+              <h3 id="statSold">0</h3>
+              <p>Sold This Year</p>
+            </div>
+            <div class="hero-stat">
+              <h3 id="statClients">0</h3>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-grid" id="heroImages">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury home" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern interior" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Pool view" loading="lazy">
+          </div>
+          <div class="hero-float-card">
+            <div class="emoji">🏡</div>
+            <div class="hero-float-card-text">
+              <small>Just Listed</small>
+              <p>Waterfront Villa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="container">
+      <div class="search-bar">
+        <div class="search-input-group">
+          <label>Location</label>
+          <input type="text" id="heroSearchLocation" placeholder="City, neighborhood...">
+        </div>
+        <div class="search-input-group">
+          <label>Property Type</label>
+          <select id="heroSearchType">
+            <option value="">All Types</option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Condo">Condo</option>
+          </select>
+        </div>
+        <div class="search-input-group">
+          <label>Max Price</label>
+          <select id="heroSearchPrice">
+            <option value="">Any Price</option>
+            <option value="500000">Under $500k</option>
+            <option value="1000000">Under $1M</option>
+            <option value="2000000">Under $2M</option>
+            <option value="5000000">Under $5M</option>
+          </select>
+        </div>
+        <button class="search-btn" onclick="quickSearch()"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Featured <span class="accent">Properties</span></h2>
+        <p>Hand-picked selections of the finest properties available in Nobana right now.</p>
+      </div>
+      <div class="property-grid" id="featuredGrid"></div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="listings.html" class="btn btn-outline">View All Properties <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--primary);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Why Choose <span class="accent">Nobana</span></h2>
+        <p>We provide a premium real estate experience tailored to your unique needs.</p>
+      </div>
+      <div class="features-grid" id="featuresContainer"></div>
+    </div>
+  </section>
+
+  <section class="section" id="agents">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Meet Our <span class="accent">Agents</span></h2>
+        <p>Dedicated professionals committed to finding your perfect property.</p>
+      </div>
+      <div class="agent-grid" id="agentGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--primary);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>What Our <span class="accent">Clients Say</span></h2>
+        <p>Hear from the people we've helped find their dream homes.</p>
+      </div>
+      <div class="testimonial-grid" id="testimonialsContainer"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-home"></i></div>
+            Nobana<span>.</span>
+          </a>
+          <p id="footerAboutText">Premium real estate services in Nobana. Helping you find exceptional properties in the most desirable locations since 2015.</p>
+          <div class="footer-social" id="footerSocial">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Property Types</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html?type=House">Houses</a></li>
+            <li><a href="listings.html?type=Apartment">Apartments</a></li>
+            <li><a href="listings.html?type=Condo">Condos</a></li>
+            <li><a href="listings.html">Luxury Estates</a></li>
+            <li><a href="listings.html">Commercial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe for the latest properties and market insights.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Your email" id="newsletterEmail">
+              <button onclick="subscribeNewsletter()"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nobana Real Estate. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> in Nobana</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+    <p id="toastMessage">Success!</p>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

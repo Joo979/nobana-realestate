@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Nobana Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon"><i class="fas fa-home"></i></div>
+      <span>Nobana Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active" data-tab="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</a>
+      <a href="#" data-tab="properties"><i class="fas fa-building"></i> Properties</a>
+      <a href="#" data-tab="agents"><i class="fas fa-user-tie"></i> Agents</a>
+      <a href="#" data-tab="settings"><i class="fas fa-cog"></i> Settings</a>
+      <a href="#" data-tab="export"><i class="fas fa-download"></i> Export</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" target="_blank"><i class="fas fa-external-link-alt"></i> View Site</a>
+    </div>
+  </aside>
+
+  <main class="main-content" id="mainContent">
+    <!-- Dashboard -->
+    <section class="tab-content active" id="tab-dashboard">
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Overview of your Nobana Real Estate site</p>
+      </div>
+      <div class="stats-grid" id="dashboardStats"></div>
+      <div class="card" style="margin-top:24px;">
+        <h3>Quick Actions</h3>
+        <div class="quick-actions">
+          <a href="#" data-tab="properties" class="quick-action-card">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Property</span>
+          </a>
+          <a href="#" data-tab="agents" class="quick-action-card">
+            <i class="fas fa-user-plus"></i>
+            <span>Manage Agents</span>
+          </a>
+          <a href="#" data-tab="settings" class="quick-action-card">
+            <i class="fas fa-edit"></i>
+            <span>Edit Business Info</span>
+          </a>
+          <a href="#" data-tab="export" class="quick-action-card">
+            <i class="fas fa-file-export"></i>
+            <span>Export Data</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties -->
+    <section class="tab-content" id="tab-properties">
+      <div class="page-header">
+        <h1>Properties</h1>
+        <p>Manage your property listings</p>
+        <button class="btn btn-primary" onclick="openPropertyModal()"><i class="fas fa-plus"></i> Add Property</button>
+      </div>
+      <div class="card">
+        <div class="table-container">
+          <table class="data-table" id="propertiesTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Beds</th>
+                <th>Baths</th>
+                <th>Location</th>
+                <th>Featured</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="propertiesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agents -->
+    <section class="tab-content" id="tab-agents">
+      <div class="page-header">
+        <h1>Agents</h1>
+        <p>Manage your agent profiles</p>
+        <button class="btn btn-primary" onclick="addAgent()"><i class="fas fa-plus"></i> Add Agent</button>
+      </div>
+      <div class="card">
+        <div class="table-container">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Title</th><th>Phone</th><th>Email</th><th>Actions</th></tr></thead>
+            <tbody id="agentsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section class="tab-content" id="tab-settings">
+      <div class="page-header">
+        <h1>Settings</h1>
+        <p>Edit your business information and site content</p>
+      </div>
+
+      <div class="settings-tabs">
+        <button class="settings-tab active" data-stab="business">Business Info</button>
+        <button class="settings-tab" data-stab="social">Social Links</button>
+        <button class="settings-tab" data-stab="hero">Hero Images</button>
+        <button class="settings-tab" data-stab="seo">SEO</button>
+      </div>
+
+      <div class="settings-content active" id="stab-business">
+        <div class="card">
+          <h3>Business Information</h3>
+          <form id="settingsForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Business Name</label>
+                <input type="text" id="set_name" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>Tagline</label>
+                <input type="text" id="set_tagline" class="s-field">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea id="set_description" class="s-field" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" id="set_address" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" id="set_city" class="s-field">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="set_phone" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>Phone 2</label>
+                <input type="text" id="set_phone2" class="s-field">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="set_email" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>Email 2</label>
+                <input type="email" id="set_email2" class="s-field">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Office Hours</label>
+              <textarea id="set_hours" class="s-field" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Map Latitude</label>
+                <input type="text" id="set_lat" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>Map Longitude</label>
+                <input type="text" id="set_lng" class="s-field">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Stats - Sold</label>
+                <input type="number" id="set_sold" class="s-field">
+              </div>
+              <div class="form-group">
+                <label>Stats - Clients</label>
+                <input type="number" id="set_clients" class="s-field">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Business Info</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="settings-content" id="stab-social">
+        <div class="card">
+          <h3>Social Media Links</h3>
+          <form id="socialForm">
+            <div class="form-group">
+              <label>Facebook URL</label>
+              <input type="url" id="soc_facebook" class="soc-field" placeholder="https://facebook.com/...">
+            </div>
+            <div class="form-group">
+              <label>Instagram URL</label>
+              <input type="url" id="soc_instagram" class="soc-field" placeholder="https://instagram.com/...">
+            </div>
+            <div class="form-group">
+              <label>Twitter URL</label>
+              <input type="url" id="soc_twitter" class="soc-field" placeholder="https://twitter.com/...">
+            </div>
+            <div class="form-group">
+              <label>LinkedIn URL</label>
+              <input type="url" id="soc_linkedin" class="soc-field" placeholder="https://linkedin.com/...">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Social Links</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="settings-content" id="stab-hero">
+        <div class="card">
+          <h3>Hero Images</h3>
+          <p>Enter up to 3 image URLs for the hero background.</p>
+          <div id="heroImagesList"></div>
+          <button class="btn btn-secondary" onclick="addHeroImage()"><i class="fas fa-plus"></i> Add Image</button>
+          <div style="margin-top:12px;">
+            <button class="btn btn-primary" onclick="saveHeroImages()"><i class="fas fa-save"></i> Save Hero Images</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-content" id="stab-seo">
+        <div class="card">
+          <h3>SEO Settings</h3>
+          <form id="seoForm">
+            <div class="form-group">
+              <label>Page Title</label>
+              <input type="text" id="seo_title" class="seo-field">
+            </div>
+            <div class="form-group">
+              <label>Meta Description</label>
+              <textarea id="seo_description" class="seo-field" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save SEO Settings</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Export -->
+    <section class="tab-content" id="tab-export">
+      <div class="page-header">
+        <h1>Export Data</h1>
+        <p>Download your updated data files to replace the originals</p>
+      </div>
+      <div class="card">
+        <h3>Export Modified Data</h3>
+        <p>After making changes, download the updated JSON files and replace the existing ones in the <code>data/</code> folder.</p>
+        <div class="export-actions">
+          <button class="btn btn-primary" onclick="exportProperties()"><i class="fas fa-file-code"></i> Export Properties</button>
+          <button class="btn btn-primary" onclick="exportSettings()"><i class="fas fa-file-code"></i> Export Settings</button>
+          <button class="btn btn-secondary" onclick="exportAll()"><i class="fas fa-file-archive"></i> Export All</button>
+        </div>
+      </div>
+      <div class="card" style="margin-top:24px;">
+        <h3>Data Preview</h3>
+        <p>Your changes are stored in the browser. Use the export buttons above to download updated files.</p>
+        <div class="export-actions">
+          <button class="btn btn-outline" onclick="resetToOriginal()"><i class="fas fa-undo"></i> Reset to Original</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Property Edit Modal -->
+  <div class="modal-overlay" id="propertyModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add Property</h3>
+        <button class="modal-close" onclick="closePropertyModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="propertyForm">
+          <input type="hidden" id="prop_id">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Title *</label><input type="text" id="prop_title" required>
+            </div>
+            <div class="form-group">
+              <label>Price *</label><input type="number" id="prop_price" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Type *</label>
+              <select id="prop_type"><option>House</option><option>Apartment</option><option>Condo</option></select>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <select id="prop_status"><option>For Sale</option><option>For Rent</option><option>Sold</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Bedrooms</label><input type="number" id="prop_beds" min="0"></div>
+            <div class="form-group"><label>Bathrooms</label><input type="number" id="prop_baths" min="0" step="0.5"></div>
+            <div class="form-group"><label>Sq Ft</label><input type="number" id="prop_sqft" min="0"></div>
+          </div>
+          <div class="form-group">
+            <label>Location</label><input type="text" id="prop_location">
+          </div>
+          <div class="form-group">
+            <label>Description</label><textarea id="prop_description" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Features (comma-separated)</label>
+            <input type="text" id="prop_features" placeholder="Pool, Garage, Garden...">
+          </div>
+          <div class="form-group">
+            <label>Image URLs (one per line)</label>
+            <textarea id="prop_images" rows="3" placeholder="https://..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Latitude</label><input type="text" id="prop_lat"></div>
+            <div class="form-group"><label>Longitude</label><input type="text" id="prop_lng"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Year Built</label><input type="number" id="prop_year" min="1800" max="2030"></div>
+            <div class="form-group"><label>Agent Name</label><input type="text" id="prop_agent"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Agent Title</label><input type="text" id="prop_agentTitle"></div>
+            <div class="form-group"><label>Agent Phone</label><input type="text" id="prop_agentPhone"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Agent Email</label><input type="email" id="prop_agentEmail"></div>
+            <div class="form-group"><label>Agent Image URL</label><input type="url" id="prop_agentImage" placeholder="https://i.pravatar.cc/150?img=X"></div>
+          </div>
+          <div class="form-group">
+            <label><input type="checkbox" id="prop_featured"> Featured Property</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closePropertyModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveProperty()"><i class="fas fa-save"></i> Save Property</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="adminToast">
+    <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+    <p id="adminToastMsg">Saved!</p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

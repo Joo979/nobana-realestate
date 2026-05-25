@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Nobana Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-home"></i></div>
+        Nobana<span>.</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta"><i class="fas fa-phone"></i> Get In Touch</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Get In <span style="color: var(--accent);">Touch</span></h1>
+      <p>We'd love to hear from you. Reach out to us anytime.</p>
+    </div>
+  </section>
+
+  <section class="contact-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Let's Find Your <span style="color: var(--accent);">Dream Home</span></h2>
+          <p>Whether you're looking to buy, sell, or rent, our team is here to help. Get in touch with us and let's start your real estate journey.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Office Address</h4>
+              <p id="contactAddress">123 Ocean Drive, Suite 200<br>Nobana, NA 33101</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h4>Phone Number</h4>
+              <p id="contactPhone">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email Address</h4>
+              <p id="contactEmail">info@nobanarealestate.com<br>support@nobanarealestate.com</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Office Hours</h4>
+              <p id="contactHours">Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 10:00 AM - 5:00 PM<br>Sunday: By Appointment</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Full Name *</label>
+                <input type="text" id="formName" placeholder="John Doe" required>
+                <div class="error">Please enter your name</div>
+              </div>
+              <div class="form-group">
+                <label for="formEmail">Email *</label>
+                <input type="email" id="formEmail" placeholder="john@example.com" required>
+                <div class="error">Please enter a valid email</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="formPhone">Phone</label>
+              <input type="tel" id="formPhone" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Subject *</label>
+              <select id="formSubject" required>
+                <option value="">Select a subject</option>
+                <option value="Buying">I'm looking to buy</option>
+                <option value="Selling">I'm looking to sell</option>
+                <option value="Renting">I'm looking to rent</option>
+                <option value="Inquiry">General inquiry</option>
+                <option value="Appointment">Schedule an appointment</option>
+              </select>
+              <div class="error">Please select a subject</div>
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message *</label>
+              <textarea id="formMessage" placeholder="Tell us about what you're looking for..." required></textarea>
+              <div class="error">Please enter your message</div>
+            </div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">Our Location</h2>
+      <div id="contactMap" style="height:400px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--glass-border);" data-lat="29.977739720713398" data-lng="31.111982587292392"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-home"></i></div>
+            Nobana<span>.</span>
+          </a>
+          <p id="footerAboutText">Premium real estate services in Nobana. Helping you find exceptional properties in the most desirable locations since 2015.</p>
+          <div class="footer-social" id="footerSocial">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Property Types</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html?type=House">Houses</a></li>
+            <li><a href="listings.html?type=Apartment">Apartments</a></li>
+            <li><a href="listings.html?type=Condo">Condos</a></li>
+            <li><a href="listings.html">Luxury Estates</a></li>
+            <li><a href="listings.html">Commercial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe for the latest properties and market insights.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Your email" id="newsletterEmail">
+              <button onclick="subscribeNewsletter()"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nobana Real Estate. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> in Nobana</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+    <p id="toastMessage">Success!</p>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details - Nobana Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-home"></i></div>
+        Nobana<span>.</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html" class="active">Listings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta"><i class="fas fa-phone"></i> Get In Touch</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="property-detail" id="propertyDetail">
+    <div class="container">
+      <div id="propertyContent">
+        <div class="skeleton" style="height: 500px; margin-bottom: 40px;"></div>
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+          <div>
+            <div class="skeleton" style="height: 40px; width: 60%; margin-bottom: 16px;"></div>
+            <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 24px;"></div>
+            <div class="skeleton" style="height: 80px; margin-bottom: 24px;"></div>
+            <div class="skeleton" style="height: 120px;"></div>
+          </div>
+          <div>
+            <div class="skeleton" style="height: 200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-home"></i></div>
+            Nobana<span>.</span>
+          </a>
+          <p id="footerAboutText">Premium real estate services in Nobana. Helping you find exceptional properties in the most desirable locations since 2015.</p>
+          <div class="footer-social" id="footerSocial">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Property Types</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html?type=House">Houses</a></li>
+            <li><a href="listings.html?type=Apartment">Apartments</a></li>
+            <li><a href="listings.html?type=Condo">Condos</a></li>
+            <li><a href="listings.html">Luxury Estates</a></li>
+            <li><a href="listings.html">Commercial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <div class="footer-newsletter">
+            <p>Subscribe for the latest properties and market insights.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Your email" id="newsletterEmail">
+              <button onclick="subscribeNewsletter()"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nobana Real Estate. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> in Nobana</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+    <p id="toastMessage">Success!</p>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
